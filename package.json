@@ -1,0 +1,35 @@
+{
+  "name": "grunt-publish-github-drafts",
+  "version": "0.0.1",
+  "author": "Alexey <alex.esprit@gmail.com>",
+  "description": "A Grunt task to publish release drafts on GitHub",
+  "license": "MIT",
+  "files": [
+    "tasks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web-scrobbler/grunt-publish-github-drafts.git"
+  },
+  "keywords": [
+    "github",
+    "grunt",
+    "gruntplugin"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "@octokit/rest": "^17.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-web-scrobbler": "^0.1.0"
+  },
+  "peerDependencies": {
+    "grunt": ">=1"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
