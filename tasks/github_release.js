@@ -18,7 +18,7 @@ module.exports = (grunt) => {
 			await publishRelease(owner, repo, tag);
 			grunt.log.ok(`Created release for ${tag} version`);
 		} catch (err) {
-			grunt.log.error(err.message);
+			grunt.fail.fatal(err);
 		} finally {
 			done();
 		}
