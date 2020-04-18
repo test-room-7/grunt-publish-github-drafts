@@ -10,7 +10,9 @@ let githubClient = {};
 module.exports = (grunt) => {
 	grunt.registerTask(taskName, taskDescription, async function() {
 		const done = this.async();
+
 		const { owner, repo, token, tag } = grunt.config.get(this.name);
+		assertOptionsArePresent({ owner, repo, token, tag });
 
 		githubClient = new Octokit({ auth: token });
 
@@ -23,6 +25,21 @@ module.exports = (grunt) => {
 			done();
 		}
 	});
+
+	function assertOptionsArePresent(config) {
+		for (const key in config) {
+			const value = config[key];
+
+			if (value === undefined) {
+				grunt.fail.fatal(`"${key}" option is missing`);
+			}
+
+			const valueType = typeof value;
+			if (valueType !== 'string') {
+				grunt.fail.fatal(`Invalid "${key}" option value: expected string, got ${valueType}`);
+			}
+		}
+	}
 };
 
 /**
