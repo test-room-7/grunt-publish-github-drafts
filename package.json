@@ -1,6 +1,6 @@
 {
   "name": "grunt-publish-github-drafts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Alexey <alex.esprit@gmail.com>",
   "description": "A Grunt task to publish release drafts on GitHub",
   "license": "MIT",
